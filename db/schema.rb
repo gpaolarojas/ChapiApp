@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181022154708) do
+ActiveRecord::Schema.define(version: 20181024164751) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "categories_users", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "category_id"
+    t.index ["category_id"], name: "index_categories_users_on_category_id"
+    t.index ["user_id"], name: "index_categories_users_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -37,10 +44,10 @@ ActiveRecord::Schema.define(version: 20181022154708) do
   end
 
   create_table "places", force: :cascade do |t|
-    t.integer "lattitude"
+    t.integer "latitude"
     t.integer "longitude"
     t.string "name"
-    t.text "direction"
+    t.text "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,13 +58,6 @@ ActiveRecord::Schema.define(version: 20181022154708) do
     t.integer "phoneNumber"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "users_categories", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "category_id"
-    t.index ["category_id"], name: "index_users_categories_on_category_id"
-    t.index ["user_id"], name: "index_users_categories_on_user_id"
   end
 
 end

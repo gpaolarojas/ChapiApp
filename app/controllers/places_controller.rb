@@ -11,13 +11,19 @@ class PlacesController < ApplicationController
     end
 
     def show
-        @place = place.find(params[:id])
+        @place = Place.find(params[:id])
         render json: @place, status: :ok
+    end
+
+    def update
+        place= Place.find(params[:id])
+        place.update(place_params)
+        render json: place, status: :ok
     end
     
 
     private 
     def place_params
-        params.permit(:name, :lattitude, :longitude, :direction)
+        params.permit(:name, :latitude, :longitude, :address)
     end
 end
