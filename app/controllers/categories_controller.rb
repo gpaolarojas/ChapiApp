@@ -9,9 +9,15 @@ class CategoriesController < ApplicationController
         categories = Category.all
         render json: categories, status: :ok
     end
-
+    
     def show
-    @category = Category.find(params[:id])
+        @category = Category.find(params[:id])
+    end
+    
+    def find_events
+    category = Category.find(params[:id])
+
+        render json: category.events, status: :ok
     end
 
     private
