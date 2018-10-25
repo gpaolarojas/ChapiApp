@@ -1,21 +1,21 @@
 class EventsController < ApplicationController
-    def create
-      @event =  Event.create(event_params)
-    end
+  def create
+    @event = Event.create(event_params)
+  end
 
-    def index
-      events = Event.all
-      render json: events, status: :ok
-    end
+  def index
+    events = Event.all
+    render json: events, status: :ok
+  end
 
-    def show
-      @event = Event.find(params[:id])
-      render json: @event, status: :ok
-    end
+  def show
+    @event = Event.find(params[:id])
+    render json: @event, status: :ok
+  end
 
-    private
-    def event_params
-      params.permit(:name, :date, :charge)
-    end
+  private
 
+  def event_params
+    params.permit(:name, :date, :charge)
+  end
 end
