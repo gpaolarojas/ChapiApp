@@ -1073,6 +1073,7 @@ Unpermitted parameter: :categories
 Completed 200 OK in 99ms (Views: 0.6ms | ActiveRecord: 81.1ms)
 
 
+<<<<<<< HEAD
 Started GET "/events/" for 127.0.0.1 at 2018-10-24 21:32:31 -0500
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by EventsController#index as */*
@@ -1082,6 +1083,297 @@ Completed 200 OK in 51ms (Views: 1.6ms | ActiveRecord: 0.7ms)
 
 Started GET "/" for 127.0.0.1 at 2018-10-25 09:38:00 -0500
   [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+=======
+Started GET "/users/1/categories" for 127.0.0.1 at 2018-10-24 11:54:27 -0500
+Processing by UsersController#find_categories as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "categories_users" ON "categories"."id" = "categories_users"."category_id" WHERE "categories_users"."user_id" = ?[0m  [["user_id", 1]]
+Completed 200 OK in 107ms (Views: 96.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/2/categories" for 127.0.0.1 at 2018-10-24 11:54:37 -0500
+Processing by UsersController#find_categories as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "categories_users" ON "categories"."id" = "categories_users"."category_id" WHERE "categories_users"."user_id" = ?[0m  [["user_id", 2]]
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/3/categories" for 127.0.0.1 at 2018-10-24 11:54:43 -0500
+Processing by UsersController#find_categories as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "categories_users" ON "categories"."id" = "categories_users"."category_id" WHERE "categories_users"."user_id" = ?[0m  [["user_id", 3]]
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/categories/1/events" for 127.0.0.1 at 2018-10-25 08:58:40 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+AbstractController::ActionNotFound (The action 'find_events' could not be found for CategoriesController):
+  
+actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/categories/1/events?events=[1,2,3]" for 127.0.0.1 at 2018-10-25 09:00:13 -0500
+  
+AbstractController::ActionNotFound (The action 'find_events' could not be found for CategoriesController):
+  
+actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/events" for 127.0.0.1 at 2018-10-25 09:02:13 -0500
+Processing by EventsController#create as */*
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+No template found for EventsController#create, rendering head :no_content
+Completed 204 No Content in 1315ms (ActiveRecord: 3.0ms)
+
+
+Started POST "/events?name=Jam%20session&date=8-10-2018&charge=15000" for 127.0.0.1 at 2018-10-25 09:03:31 -0500
+Processing by EventsController#create as */*
+  Parameters: {"name"=>"Jam session", "date"=>"8-10-2018", "charge"=>"15000"}
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+No template found for EventsController#create, rendering head :no_content
+Completed 204 No Content in 1098ms (ActiveRecord: 1.0ms)
+
+
+Started POST "/events?date=8-10-201&charge=15000&name=Cupido" for 127.0.0.1 at 2018-10-25 09:04:09 -0500
+Processing by EventsController#create as */*
+  Parameters: {"date"=>"8-10-201", "charge"=>"15000", "name"=>"Cupido"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+No template found for EventsController#create, rendering head :no_content
+Completed 204 No Content in 1113ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/events?date=8-10-201&charge=15000&name=Los%20amigos%20invisibles" for 127.0.0.1 at 2018-10-25 09:04:30 -0500
+Processing by EventsController#create as */*
+  Parameters: {"date"=>"8-10-201", "charge"=>"15000", "name"=>"Los amigos invisibles"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+No template found for EventsController#create, rendering head :no_content
+Completed 204 No Content in 1115ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/events?date=8-10-201&charge=15000&name=Judas%20Priest" for 127.0.0.1 at 2018-10-25 09:05:10 -0500
+Processing by EventsController#create as */*
+  Parameters: {"date"=>"8-10-201", "charge"=>"15000", "name"=>"Judas Priest"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+No template found for EventsController#create, rendering head :no_content
+Completed 204 No Content in 1115ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/categories/1/events?events=[1,2,3]" for 127.0.0.1 at 2018-10-25 09:13:47 -0500
+  
+AbstractController::ActionNotFound (The action 'find_events' could not be found for CategoriesController):
+  
+actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/events" for 127.0.0.1 at 2018-10-25 09:16:54 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events?date=8-10-201&charge=15000&name=Judas%20Priest" for 127.0.0.1 at 2018-10-25 09:17:09 -0500
+Processing by EventsController#create as */*
+  Parameters: {"date"=>"8-10-201", "charge"=>"15000", "name"=>"Judas Priest"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+No template found for EventsController#create, rendering head :no_content
+Completed 204 No Content in 1111ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-10-25 09:17:22 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events?date=8-10-201&charge=15000&name=Judas%20Priest" for 127.0.0.1 at 2018-10-25 09:18:43 -0500
+Processing by EventsController#create as */*
+  Parameters: {"date"=>"8-10-201", "charge"=>"15000", "name"=>"Judas Priest"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 34ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events?date=8-10-201&charge=15000&name=Los%20amigos%20invisibles" for 127.0.0.1 at 2018-10-25 09:19:07 -0500
+Processing by EventsController#create as */*
+  Parameters: {"date"=>"8-10-201", "charge"=>"15000", "name"=>"Los amigos invisibles"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/events?date=8-10-201&charge=15000&name=La%20noche%20de%20los%20muertos" for 127.0.0.1 at 2018-10-25 09:19:33 -0500
+Processing by EventsController#create as */*
+  Parameters: {"date"=>"8-10-201", "charge"=>"15000", "name"=>"La noche de los muertos"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-10-25 09:19:37 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-10-25 09:21:19 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 13ms (Views: 4.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-10-25 09:21:48 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-25 09:22:02 -0500
+>>>>>>> 49aca78a250907b9198ee77b182aad1f1ffb4c36
   
 ActionController::RoutingError (uninitialized constant WelcomeController):
   
@@ -1136,7 +1428,17 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/favicon.ico" for 127.0.0.1 at 2018-10-25 09:38:02 -0500
+=======
+Started GET "/events" for 127.0.0.1 at 2018-10-25 09:22:23 -0500
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2018-10-25 09:22:23 -0500
+>>>>>>> 49aca78a250907b9198ee77b182aad1f1ffb4c36
   
 ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
   
@@ -1167,6 +1469,7 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/places/?id=1" for 127.0.0.1 at 2018-10-25 09:38:46 -0500
 Processing by PlacesController#index as */*
   Parameters: {"id"=>"1"}
@@ -1179,6 +1482,181 @@ Started GET "/places_events/?id=1" for 127.0.0.1 at 2018-10-25 09:39:06 -0500
 ActionController::RoutingError (No route matches [GET] "/places_events"):
   
 actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+=======
+Started GET "/categories" for 127.0.0.1 at 2018-10-25 09:23:34 -0500
+Processing by CategoriesController#index as HTML
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Completed 200 OK in 59ms (Views: 33.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-10-25 09:23:45 -0500
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-10-25 09:25:15 -0500
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 14ms (Views: 4.8ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/events?date=8-10-201&charge=15000&name=La%20noche%20de%20los%20muertos" for 127.0.0.1 at 2018-10-25 09:29:32 -0500
+Processing by EventsController#create as */*
+  Parameters: {"date"=>"8-10-201", "charge"=>"15000", "name"=>"La noche de los muertos"}
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 31ms (Views: 0.7ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/events?date=8-10-201&charge=15000&name=La%20noche%20de%20los%20muertos&place=1" for 127.0.0.1 at 2018-10-25 09:30:35 -0500
+Processing by EventsController#create as */*
+  Parameters: {"date"=>"8-10-201", "charge"=>"15000", "name"=>"La noche de los muertos", "place"=>"1"}
+Unpermitted parameter: :place
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events?date=8-10-201&charge=15000&name=La%20noche%20de%20los%20muertos&place_id=1" for 127.0.0.1 at 2018-10-25 09:30:47 -0500
+Processing by EventsController#create as */*
+  Parameters: {"date"=>"8-10-201", "charge"=>"15000", "name"=>"La noche de los muertos", "place_id"=>"1"}
+Unpermitted parameter: :place_id
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events?date=8-10-201&charge=15000&name=La%20noche%20de%20los%20muertos&place_id=1" for 127.0.0.1 at 2018-10-25 09:31:54 -0500
+Processing by EventsController#create as */*
+  Parameters: {"date"=>"8-10-201", "charge"=>"15000", "name"=>"La noche de los muertos", "place_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlace Load (0.0ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "events" ("name", "date", "charge", "place_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "La noche de los muertos"], ["date", "0201-10-08"], ["charge", 15000], ["place_id", 1], ["created_at", "2018-10-25 14:31:54.666444"], ["updated_at", "2018-10-25 14:31:54.666444"]]
+  [1m[35m (99.8ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 213ms (Views: 1.1ms | ActiveRecord: 101.9ms)
+
+
+Started POST "/events?date=8-10-201&charge=15000&name=Los%20amigos%20invisibles&place_id=1" for 127.0.0.1 at 2018-10-25 09:32:10 -0500
+Processing by EventsController#create as */*
+  Parameters: {"date"=>"8-10-201", "charge"=>"15000", "name"=>"Los amigos invisibles", "place_id"=>"1"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlace Load (0.0ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "events" ("name", "date", "charge", "place_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Los amigos invisibles"], ["date", "0201-10-08"], ["charge", 15000], ["place_id", 1], ["created_at", "2018-10-25 14:32:10.790369"], ["updated_at", "2018-10-25 14:32:10.790369"]]
+  [1m[35m (108.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 120ms (Views: 0.9ms | ActiveRecord: 110.1ms)
+
+
+Started POST "/events?date=8-10-201&charge=15000&name=Jam%20session&place_id=3" for 127.0.0.1 at 2018-10-25 09:32:24 -0500
+Processing by EventsController#create as */*
+  Parameters: {"date"=>"8-10-201", "charge"=>"15000", "name"=>"Jam session", "place_id"=>"3"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlace Load (0.0ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events?date=8-10-201&charge=15000&name=Jam%20session&place_id=2" for 127.0.0.1 at 2018-10-25 09:32:43 -0500
+Processing by EventsController#create as */*
+  Parameters: {"date"=>"8-10-201", "charge"=>"15000", "name"=>"Jam session", "place_id"=>"2"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPlace Load (0.0ms)[0m  [1m[34mSELECT  "places".* FROM "places" WHERE "places"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "events" ("name", "date", "charge", "place_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Jam session"], ["date", "0201-10-08"], ["charge", 15000], ["place_id", 2], ["created_at", "2018-10-25 14:32:43.982340"], ["updated_at", "2018-10-25 14:32:43.982340"]]
+  [1m[35m (106.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 118ms (Views: 1.3ms | ActiveRecord: 107.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-10-25 09:33:01 -0500
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 34ms (Views: 20.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2018-10-25 09:33:37 -0500
+Processing by EventsController#index as */*
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/categories/1/events" for 127.0.0.1 at 2018-10-25 09:34:43 -0500
+  
+AbstractController::ActionNotFound (The action 'find_events' could not be found for CategoriesController):
+  
+actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/categories/1/events" for 127.0.0.1 at 2018-10-25 09:37:28 -0500
+  
+AbstractController::ActionNotFound (The action 'find_events' could not be found for CategoriesController):
+  
+actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+>>>>>>> 49aca78a250907b9198ee77b182aad1f1ffb4c36
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
 web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
