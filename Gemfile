@@ -53,9 +53,5 @@ group :production do
   gem 'pg'
 end
 
-<<<<<<< HEAD
-
-=======
->>>>>>> b0c0022954a3b36ffad3fcb19be4ac59306c2134
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
