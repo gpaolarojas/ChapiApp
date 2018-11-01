@@ -87,10 +87,6 @@ GEM
       mini_portile2 (~> 2.3.0)
     nokogiri (1.8.5-x86-mingw32)
       mini_portile2 (~> 2.3.0)
-<<<<<<< HEAD
-    pg (1.1.3)
-=======
->>>>>>> 47574a762b520007bcfefdfb53fdcafb96342eb6
     pg (1.1.3-x86-mingw32)
     public_suffix (3.0.3)
     puma (3.12.0)
