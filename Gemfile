@@ -10,7 +10,6 @@ end
 gem 'rails', '~> 5.1.6'
 # Use sqlite3 as the database for Active Record
 <<<<<<< HEAD
-# gem 'sqlite3'
 =======
 #gem 'sqlite3'
 >>>>>>> 47574a762b520007bcfefdfb53fdcafb96342eb6
