@@ -69,3 +69,9 @@ db/migrate/20181024164751_modify_users_categories.rb
 db/migrate/20181025161941_categ_users.rb
 db/development.sqlite3
 log/development.log
+tmp/cache/assets/sprockets/v3.0/h5/h5ik4t6hjh1nYoJNA00qPrSAh9LuZ0GBrZpaQQ_5gck.cache
+tmp/cache/assets/sprockets/v3.0/h5/h5ik4t6hjh1nYoJNA00qPrSAh9LuZ0GBrZpaQQ_5gck.cache
+tmp/cache/assets/sprockets/v3.0/kI/kIollIv4TYE3GLnmf2oj-KJmzcuh28IPlb1rQjS2CAY.cache
+tmp/cache/assets/sprockets/v3.0/zf/zfqe2XNBhRJt1wS2S0YGzVdTz2g26ZoOAYoLYskfBs4.cache
+tmp/cache/assets/sprockets/v3.0/xt/xt2uDSP5VeDHuEn6ZiBff_VzfnBMyojUuAS5PeuhcvA.cache
+log/development.log
