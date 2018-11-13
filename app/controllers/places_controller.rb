@@ -27,6 +27,12 @@ class PlacesController < ApplicationController
     render json: place, status: :ok
   end
 
+  def find_place_location
+    place = Place.find_by(latitude: params[:latitude], longitude: params[:longitude])
+    event = Event.find(place.id)
+    render json: event, status: :ok
+  end
+
   private
 
   def place_params

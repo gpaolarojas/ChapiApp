@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181025161941) do
+ActiveRecord::Schema.define(version: 20181031143443) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20181025161941) do
   create_table "categories_users", id: false, force: :cascade do |t|
     t.integer "user_id"
     t.integer "category_id"
-    t.index ["category_id"], name: "index_categories_users_on_category_id"
+    t.index ["category_gitid"], name: "index_categories_users_on_category_id"
     t.index ["user_id"], name: "index_categories_users_on_user_id"
   end
 
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 20181025161941) do
   end
 
   create_table "places", force: :cascade do |t|
-    t.integer "latitude"
-    t.integer "longitude"
+    t.float "latitude"
+    t.float "longitude"
     t.string "name"
     t.text "address"
     t.datetime "created_at", null: false
