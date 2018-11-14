@@ -6,8 +6,18 @@ class EventsController < ApplicationController
 
   def index
     events = Event.all
-    events.map!{|event| event.merge({:lat => event.place.latitude, :long => event.place.longitude})}
-    render json: events, status: :ok
+    to_resolve = Array.new
+    events.each do |event| 
+      new_event = {:lat => event.place.latitude, 
+        :long => event.place.longitude, 
+        :name => event.name, 
+        :charge => event.charge, 
+        :date => event.date
+      }
+      to_resolve.push(new_event)
+    end
+
+    render json: to_resolve, status: :ok
   end
 
   def show
