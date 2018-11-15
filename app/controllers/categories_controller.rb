@@ -27,4 +27,7 @@ class CategoriesController < ApplicationController
         eve.map!{|c| Event.find(c)}
         a.merge :events=>eve
     end
+    def category_params
+        params.permit(:name, :description)
+      end
 end
