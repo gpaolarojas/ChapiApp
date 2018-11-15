@@ -23,8 +23,17 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
-    render json: @event, status: :ok
+    event = Event.find(params[:id])
+    new_event = {:lat => event.place.latitude, 
+        :long => event.place.longitude, 
+        :name => event.name, 
+        :charge => event.charge, 
+        :date => event.date,
+        :id => event.id,
+        :placeName => event.place.name
+      }
+      
+    render json: new_event, status: :ok
   end
 
   private
