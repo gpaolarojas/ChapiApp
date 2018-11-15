@@ -13,7 +13,8 @@ class EventsController < ApplicationController
         :name => event.name, 
         :charge => event.charge, 
         :date => event.date,
-        :id => event.id
+        :id => event.id,
+        :placeName => event.place.name
       }
       to_resolve.push(new_event)
     end
