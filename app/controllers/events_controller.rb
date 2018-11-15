@@ -14,7 +14,10 @@ class EventsController < ApplicationController
         :charge => event.charge, 
         :date => event.date,
         :id => event.id,
-        :placeName => event.place.name
+        :placeName => event.place.name,
+        :image => event.image,
+        :description_event => event.description_event
+
       }
       to_resolve.push(new_event)
     end
@@ -30,7 +33,9 @@ class EventsController < ApplicationController
         :charge => event.charge, 
         :date => event.date,
         :id => event.id,
-        :placeName => event.place.name
+        :placeName => event.place.name,
+        :image => event.image,
+        :description_event => event.description_event
       }
       
     render json: new_event, status: :ok
@@ -39,6 +44,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.permit(:name, :date, :charge, :place_id)
+    params.permit(:name, :date, :charge, :place_id, :description_event, :image)
   end
 end
