@@ -25,8 +25,10 @@ class CreateTables < ActiveRecord::Migration[5.1]
 
     create_table :events do |t|
       t.string :name
-      t.date :date
+      t.datetime :date
       t.integer :charge
+      t.string :description_event
+      t.string :image
       t.references :place, foreign_key: true
 
       t.timestamps
