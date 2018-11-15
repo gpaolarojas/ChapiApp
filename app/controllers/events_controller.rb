@@ -12,7 +12,8 @@ class EventsController < ApplicationController
         :long => event.place.longitude, 
         :name => event.name, 
         :charge => event.charge, 
-        :date => event.date
+        :date => event.date,
+        :id => event.id
       }
       to_resolve.push(new_event)
     end
