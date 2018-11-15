@@ -22,10 +22,10 @@ class CategoriesController < ApplicationController
 
     private
     def categories_params
-        a = params.permit(:name, :description)
-        eve = JSON.parse(params[:events])
-        eve.map!{|c| Event.find(c)}
-        a.merge :events=>eve
+        category_tmp = params.permit(:name, :description)
+        events_json = JSON.parse(params[:events])
+        events_json.map!{|e| Event.find(e)}
+        category_tmp.merge :events=>events_json
     end
 
 end
